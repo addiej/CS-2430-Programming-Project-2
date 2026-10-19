@@ -28,7 +28,7 @@ Operations contain the logic for each part. sets_bitstring.py and multisets.py d
 Shared core is the layer everything depends on. universe.py holds the one fixed element ordering, validation.py checks that lengths match and counts are non-negative integers, and 
 formatting.py handles the [SET] and [MULTISET] labels and the bit-string plus element-name display. 
 
-Guidlines for structure:
+Guidelines for structure:
 
 Arrows only point downward. The shared core never imports an operations module, and the operations modules never import each other or main.py.
 No file other than universe.py hard-codes the element list or its size.

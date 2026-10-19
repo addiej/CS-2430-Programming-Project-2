@@ -1,3 +1,8 @@
+#Project 2: Set Operations
+#CS 2430
+#Team 3: Addie Hurst, Erich Mundt
+#Primary author for this file: Addie Hurst
+
 from Universe import UNIVERSE
 from Validation import require_counts
 
@@ -29,4 +34,22 @@ class MultiSet:
         result = []
         for a, b in zip(self._counts, other._counts):
             result.append(min(a, b))
+        return MultiSet(result)
+
+    #Multiset difference: subtracts counts (without going below zero)
+    def difference(self, other):
+        if not isinstance(other, MultiSet):
+            raise TypeError("Multiset operations require two MultiSet objects")
+        result = []
+        for a, b in zip(self._counts, other._counts):
+            result.append(max(0, a - b))
+        return MultiSet(result)
+        
+    #Multiset sum: adds the counts of the corresponding elements.
+    def sum(self, other):
+        if not isinstance(other, MultiSet):
+            raise TypeError("Multiset operations require two MultiSet objects")
+        result = []
+        for a, b in zip (self._counts, other._counts):
+            result.append(a + b)
         return MultiSet(result)
