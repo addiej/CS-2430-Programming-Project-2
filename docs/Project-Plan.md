@@ -23,9 +23,9 @@ Phase 2: Part 2 (Multisets)
 2.6	Label all output as multiset operations			
 Phase 3: Shared Code and Testing				
 3.1	Factor shared validation and formatting into common module			
-3.2	Write 2–3 representative test cases per part			
-3.3	Write edge cases (see below)			
-3.4	Run tests and save output to a results file			
+3.2	Write 2–3 representative test cases per part			                                           [TODO]
+3.3	Write edge cases (see below)			                                                           [TODO]
+3.4	Run tests and save output to a results file			                                             [TODO]
 Phase 4: Week 2 Change Request				
 4.1	Read Canvas announcement; record requirement in the plan			
 4.2	Create issue(s) and a branch for the change			
