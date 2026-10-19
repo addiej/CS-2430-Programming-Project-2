@@ -1,1 +1,3 @@
 # CS-2430-Programming-Project-2
+
+INSTRUCTIONS FOR THE USER GO HERE!
