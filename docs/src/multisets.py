@@ -18,4 +18,4 @@ class MultiSet:
         #pairs corresponding values from both lists.
         for a, b in zip(self._counts, other._counts):
             result.append(max(a, b))
-            return MultiSet(result)
+        return MultiSet(result)
