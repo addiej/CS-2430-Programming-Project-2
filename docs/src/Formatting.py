@@ -9,7 +9,7 @@
 # import the set classes. Labels are defined once, here. Part 2 and the Week 2
 # Change Request should add their own label constants in this file.
 
-from universe import UNIVERSE
+from Universe import UNIVERSE
 
 SET_LABEL = "[SET]"  # ordinary sets (Part 1)
 

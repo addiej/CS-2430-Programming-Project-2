@@ -6,7 +6,7 @@
 # File: data.py - hard-coded inputs shared by main.py and tests/.
 # Data only, no logic. Part 2 (multiset) data gets added below later.
 
-from universe import UNIVERSE  # the universe itself is owned by universe.py
+from Universe import UNIVERSE  # the universe itself is owned by universe.py
 
 # Part 1: ordinary sets (element-name lists)
 SET_CASES = [

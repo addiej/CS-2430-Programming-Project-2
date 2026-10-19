@@ -11,8 +11,8 @@
 # formatting.py does that.
 # [SET] labels live in one place.
 
-from universe import UNIVERSE, index_of
-from validation import require_bits, require_same_size
+from Universe import UNIVERSE, index_of
+from Validation import require_bits, require_same_size
 
 
 class BitSet:

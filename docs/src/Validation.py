@@ -9,7 +9,7 @@
 # Each check raises ValueError with a clear message instead of letting bad
 # data produce a wrong answer silently.
 
-from universe import size
+from Universe import size
 
 
 def require_bits(bits):
