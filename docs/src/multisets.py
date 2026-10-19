@@ -30,3 +30,12 @@ class MultiSet:
         for a, b in zip(self._counts, other._counts):
             result.append(min(a, b))
         return MultiSet(result)
+
+    #Multiset difference: subtracts counts (without going below zero)
+    def difference(self, other):
+        if not isinstance(other, MultiSet):
+            raise TypeError("Multiset operations require two MultiSet objects")
+        result = []
+        for a, b in zip(self._counts, other._counts):
+            result.append(max(0, a - b))
+        return MultiSet(result)
