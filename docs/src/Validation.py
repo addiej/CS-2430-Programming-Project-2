@@ -28,3 +28,9 @@ def require_same_size(first, second):
     if len(first.bits) != len(second.bits):
         raise ValueError(
             f"size mismatch: {len(first.bits)} bits vs {len(second.bits)} bits")
+#creates a functions which acceptsd a list of multiplicities
+def require_counts(counts):
+    #check whether the number of items in the list is different from the size of the universal set
+    if len(counts) != size():
+        #stop operation and reports an error if the list has the wrong number of elements
+        raise ValueError("Invalid number of counts")
