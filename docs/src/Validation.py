@@ -35,3 +35,7 @@ def require_counts(counts):
     if len(counts) != size():
         #stop operation and reports an error if the list has the wrong number of elements
         raise ValueError("Invalid number of counts")
+    # Check each multiplicity to ensure it is a non-negative integer
+    for count in counts:
+        if type(count) is not int or count < 0:
+            raise ValueError("Counts must be non-negative integers")
