@@ -1,3 +1,8 @@
+#Project 2: Set Operations
+#CS 2430
+#Team 3: Addie Hurst, Erich Mundt
+#Primary author for this file: Addie Hurst
+
 from Universe import UNIVERSE
 from Validation import require_counts
 
