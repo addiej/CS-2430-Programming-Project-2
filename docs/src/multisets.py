@@ -1,5 +1,5 @@
 from Universe import UNIVERSE
-
+from Validation import require_counts
 
 #creates class MultiSet  
 class MultiSet:
