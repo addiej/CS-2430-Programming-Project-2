@@ -4,22 +4,22 @@ Goal: To implement ordinary set operations(bit strings) and multiset operations 
 Project Plan
 ID--Task	------------------------------------------------------------- Owner	----------------- Status	---------------------------- Evidence
 Phase 0: Setup				
-0.1	Create repo, folder structure, README			                       Addie & Erich                []
+0.1	Create repo, folder structure, README			                       Addie & Erich                [IN PROGRESS]
 0.2	Create GitHub issues for each task below			
 0.3	Define and document universe ordering			
 Phase 1: Part 1 (Sets)				
 1.1	Bit string/Boolean array representation of A and B (n ≥ 10)			
-1.2	Implement NOT(A)			
+1.2	Implement NOT(A)			                        
 1.3	Implement union, intersection			
 1.4	Implement difference (A − B)			
 1.5	Implement symmetric difference as (A − B) ∪ (B − A)			
 1.6	Display bit string and element-name listing for every result			
 Phase 2: Part 2 (Multisets)				
-2.1	Multiplicity representation (list or dict of counts)			
-2.2	Choose A and B with ≥ 2 elements of multiplicity > 1 each			
-2.3	Implement max (union) and min (intersection)			
-2.4	Implement truncated difference (never below 0)			
-2.5	Implement sum			
+2.1	Multiplicity representation (list or dict of counts)			        Addie                      [COMPLETE]
+2.2	Choose A and B with ≥ 2 elements of multiplicity > 1 each			    Addie                      [COMPLETE]
+2.3	Implement max (union) and min (intersection)			                Addie                      [COMPLETE]
+2.4	Implement truncated difference (never below 0)			              Addie                      [COMPLETE]
+2.5	Implement sum			                                                Addie                      [COMPLETE]
 2.6	Label all output as multiset operations			
 Phase 3: Shared Code and Testing				
 3.1	Factor shared validation and formatting into common module			
