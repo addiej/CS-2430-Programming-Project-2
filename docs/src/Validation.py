@@ -13,7 +13,7 @@ from universe import size
 
 
 def require_bits(bits):
-    """Check a bit array has exactly n entries and each entry is True/False (or 0/1)."""
+    #Check a bit array has exactly n entries and each entry is True/False (or 0/1).
     if len(bits) != size():
         raise ValueError(
             f"expected {size()} bits (one per universe element), got {len(bits)}")
@@ -24,7 +24,7 @@ def require_bits(bits):
 
 
 def require_same_size(first, second):
-    """Check two bit-based sets have the same number of positions."""
+    #Check two bit-based sets have the same number of positions.
     if len(first.bits) != len(second.bits):
         raise ValueError(
             f"size mismatch: {len(first.bits)} bits vs {len(second.bits)} bits")

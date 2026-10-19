@@ -14,11 +14,11 @@ UNIVERSE = ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j")  # n = 10
 
 
 def size():
-    """Return n, the number of elements in the universal set."""
+    #Return n, the number of elements in the universal set.
     return len(UNIVERSE)
 
 def index_of(name):
-    """Return the bit position of an element name; ValueError if it is unknown."""
+    #Return the bit position of an element name; ValueError if it is unknown.
     try:
         return UNIVERSE.index(name)
     except ValueError:
@@ -26,5 +26,5 @@ def index_of(name):
             f"'{name}' is not in the universe {list(UNIVERSE)}") from None
 
 def name_at(index):
-    """Return the element name stored at a bit position."""
+    #Return the element name stored at a bit position.
     return UNIVERSE[index]
