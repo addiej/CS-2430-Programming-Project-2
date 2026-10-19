@@ -26,3 +26,7 @@ SET_EDGE_CASES = [
     {"name": "edge: A equals B",
      "A": ["b", "d", "f"], "B": ["b", "d", "f"]},
 ]
+
+# Part 2: Multiset data
+MULTISET_A = [3, 2, 1, 0, 2, 0, 0, 0, 0, 0]
+MULTISET_B = [1, 4, 2, 0, 1, 0, 0, 0, 0, 0]
