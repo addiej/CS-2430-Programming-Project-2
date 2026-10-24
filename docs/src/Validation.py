@@ -29,7 +29,7 @@ def require_same_size(first, second):
         raise ValueError(
             f"size mismatch: {len(first.bits)} bits vs {len(second.bits)} bits")
         
-#creates a functions which acceptsd a list of multiplicities
+#creates a functions which accepts a list of multiplicities
 def require_counts(counts):
     #check whether the number of items in the list is different from the size of the universal set
     if len(counts) != size():
@@ -39,3 +39,8 @@ def require_counts(counts):
     for count in counts:
         if type(count) is not int or count < 0:
             raise ValueError("Counts must be non-negative integers")
+
+#creates a function which validates whether appropriate values are passed for week 2
+#change condition
+def require_memberships(memberships):
+    #TODO FuzzySet validation
