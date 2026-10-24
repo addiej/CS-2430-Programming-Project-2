@@ -40,7 +40,9 @@ def require_counts(counts):
         if type(count) is not int or count < 0:
             raise ValueError("Counts must be non-negative integers")
 
-#creates a function which validates whether appropriate values are passed for week 2
-#change condition
+#Creates a function which validates whether appropriate values are passed for week 2
+#change condition.
 def require_memberships(memberships):
-    #TODO FuzzySet validation
+    #Checks whether the number of membership degrees matches the number of elements in 
+    #Universe (10 elements).
+    if len(memberships) != size():
