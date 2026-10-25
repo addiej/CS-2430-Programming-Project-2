@@ -8,7 +8,7 @@
 
 from Data import SET_CASES, SET_EDGE_CASES, MULTISET_A, MULTISET_B
 from Sets_bitstring import BitSet
-from MultiSets imports MultiSet
+from MultiSets import MultiSet
 from Formatting import format_universe, format_set, format_multiset
 
 
