@@ -51,7 +51,8 @@ def require_memberships(memberships):
     #Checks whether value is within proper range (0.0-1.0). Raises an error if not within range. 
     #Checks whether membership degrees are of the appropriate type (can only be of type int or float).        
     for x in memberships:
-        if not (0.0 <= x <= 1.0):
-            raise ValueError("Outside of valid range (0.0 to 1.0)")
         if not (isinstance(x, int) or isinstance(x, float)):
             raise ValueError("Membership degrees must be numbers.")
+        if not (0.0 <= x <= 1.0):
+            raise ValueError("Outside of valid range (0.0 to 1.0)")
+
