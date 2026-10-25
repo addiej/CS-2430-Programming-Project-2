@@ -2,7 +2,7 @@
 # Team members: Erich Mundt, Addie Hurst
 # Course and section: CS 2430, section 502
 # Project name: Programming Project 2
-# Primary author:
+# Primary author: Erich, some additions made by Addie
 # File: main.py - runs every demo with clearly labeled output.
 # Run with:  python main.py
 
