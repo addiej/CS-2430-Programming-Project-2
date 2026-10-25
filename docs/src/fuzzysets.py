@@ -12,7 +12,7 @@ class FuzzySet:
     #Checks whether the input is valid
     require_memberships(memberships)
     #Stores memberships degrees inside the Object.
-    self._memberships = list(memberships)
+    self._memberships = tuple(float(m) for m in memberships)
 
   #Complement of FuzzySet; subtracts each membership degree from 1.0.
   def complement(self):
@@ -55,3 +55,11 @@ class FuzzySet:
   def to_pairs(self):
       #Every (element, degree) pair, in universe order (used by formatting).
       return list(zip(UNIVERSE, self._memberships))
+
+  def degree_of(self, name):
+      #Retrieve the membership degree of one element."""
+      return self._memberships[index_of(name)]
+
+  @property
+  def memberships(self):
+      return self._memberships
