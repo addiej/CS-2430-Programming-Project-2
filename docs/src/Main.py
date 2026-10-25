@@ -6,10 +6,11 @@
 # File: main.py - runs every demo with clearly labeled output.
 # Run with:  python main.py
 
-from Data import SET_CASES, SET_EDGE_CASES, MULTISET_A, MULTISET_B
+from Data import SET_CASES, SET_EDGE_CASES, MULTISET_A, MULTISET_B, FUZZY_CASES, FUZZY_EDGE_CASES
 from Sets_bitstring import BitSet
-from MultiSets import MultiSet
-from Formatting import format_universe, format_set, format_multiset
+from multisets import MultiSet
+from Formatting import format_universe, format_set, format_multiset, format_fuzzy
+from fuzzysets import FuzzySet
 
 
 def run_set_case(case):
@@ -49,9 +50,33 @@ def run_part2():
     print(format_multiset("A MINUS B", a.difference(b)))
     print(format_multiset("A SUM B", a.sum(b)))
 
+def run_fuzzy_case(case):
+    # Shows one fuzzy case: the inputs, then complement, union, and intersection.
+    a = FuzzySet.from_degrees(case["A"])
+    b = FuzzySet.from_degrees(case["B"])
+
+    print(f"=== Fuzzy case: {case['name']} ===")
+    print(format_fuzzy("A (input)", a))
+    print(format_fuzzy("B (input)", b))
+    print(format_fuzzy("COMPLEMENT of A = 1 - A(x)", a.complement()))
+    print(format_fuzzy("A UNION B = max(A(x), B(x))", a.union(b)))
+    print(format_fuzzy("A INTERSECT B = min(A(x), B(x))", a.intersection(b)))
+    print()
+
+
+def run_fuzzy():
+    # Change Request demo: representative cases first, then edge cases.
+    print("##### CHANGE REQUEST: FUZZY SETS #####")
+    print(format_universe())
+    print()
+    for case in FUZZY_CASES + FUZZY_EDGE_CASES:
+        run_fuzzy_case(case)
+
+
 def main():
     run_part1()
     run_part2()
+    run_fuzzy()
 
 if __name__ == "__main__":
     main()

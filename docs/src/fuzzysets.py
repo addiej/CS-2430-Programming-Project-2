@@ -1,4 +1,5 @@
 from Validation import require_memberships
+from Universe import UNIVERSE, index_of
 
 #Declares class FuzzySets.
 class FuzzySet:
@@ -38,3 +39,15 @@ class FuzzySet:
       for a, b in zip(self._memberships, other._memberships):
           result.append(min(a, b))
       return FuzzySet(result)
+
+  @classmethod
+  def from_degrees(cls, entries):
+  #Build from {element name: degree}. Unlisted elements get 0.0.
+      memberships = [0.0] * len(UNIVERSE)
+      for name, degree in entries.items():
+              memberships[index_of(name)] = degree      # ValueError if name unknown
+      return cls(memberships)
+
+  def to_pairs(self):
+      #Every (element, degree) pair, in universe order (used by formatting).
+      return list(zip(UNIVERSE, self._memberships))
