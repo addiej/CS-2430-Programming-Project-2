@@ -2,7 +2,7 @@
 # Team members: Erich Mundt, Addie Hurst
 # Course and section: CS 2430, section 502
 # Project name: Programming Project 2
-# Primary author: [NAME]
+# Primary author: Erich (Addie provided some additions)
 # File: formatting.py - shared output formatting and labels (shared core).
 #
 # Works with ANY object that has to_bit_string() and to_names(), so it does not
@@ -13,6 +13,8 @@ from Universe import UNIVERSE
 
 SET_LABEL = "[SET]"  # ordinary sets (Part 1)
 
+#multisets (Part 2)
+MULTISET_LABEL = "[MULTISET]" 
 
 
 def format_names(names):
@@ -33,3 +35,11 @@ def format_set(title, result):
     return (f"{SET_LABEL} {title}\n"
             f"    bit string : {result.to_bit_string()}\n"
             f"    elements   : {listing}")
+
+#Formats and labels the results of multiset operations.
+def format_multiset(title, result):
+    #Retrieves the element counts from the MultiSet object.
+    counts = result._counts
+    #Returns the operation name and its corresponding counts.
+    return (f"{MULTISET_LABEL} {title}\n"
+            f"    counts: {counts}")
