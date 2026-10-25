@@ -40,8 +40,13 @@ def require_counts(counts):
         if type(count) is not int or count < 0:
             raise ValueError("Counts must be non-negative integers.")
 
-#Creates a function which validates whether appropriate values are passed for week 2
-#change condition.
+ # INVALID-INPUT POLICY (Week 2 change order, fuzzy sets). Raises ValueError for:
+ #   - a list that does not have exactly one degree per universe element
+ #   - a degree that is not a number (strings, None, etc.)
+ #   - a boolean (True/False are not membership degrees)
+ #   - a degree below 0.0 or above 1.0, including infinity
+ #   - NaN (the range test below is False for NaN, so it is rejected there)
+ # The bounds 0.0 and 1.0 themselves are valid.
 def require_memberships(memberships):
     #Checks whether the number of membership degrees matches the number of elements in 
     #Universe (10 elements).

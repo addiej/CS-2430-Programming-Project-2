@@ -30,3 +30,22 @@ SET_EDGE_CASES = [
 # Part 2: Multiset data
 MULTISET_A = [3, 2, 1, 0, 2, 0, 0, 0, 0, 0]
 MULTISET_B = [1, 4, 2, 0, 1, 0, 0, 0, 0, 0]
+
+# ---- Change Request: fuzzy sets ({element name: degree}; unlisted = 0.0) ----
+FUZZY_CASES = [
+    # a: in both | b: only in A | d: only in B | e..j: in neither
+    {"name": "intermediate degrees",
+     "A": {"a": 0.7, "b": 0.2, "c": 1.0},
+     "B": {"a": 0.4, "c": 0.5, "d": 0.9}},
+    # exercises the exact boundary degrees 0.0 and 1.0
+    {"name": "boundary degrees 0.0 and 1.0",
+     "A": {"a": 1.0, "b": 0.0, "c": 0.5},
+     "B": {"a": 0.0, "b": 1.0, "c": 0.5}},
+]
+
+FUZZY_EDGE_CASES = [
+    {"name": "edge: A has no entries (complement is all 1.0)",
+     "A": {}, "B": {"a": 0.25}},
+    {"name": "edge: A equals B",
+     "A": {"a": 0.6, "b": 0.1}, "B": {"a": 0.6, "b": 0.1}},
+]
