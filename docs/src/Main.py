@@ -41,7 +41,9 @@ def run_part1():
 def run_part2():
     a = MultiSet(MULTISET_A)
     b = MultiSet(MULTISET_B)
-
+    print("PART 2: MULTISETS (counts) #####")
+    print(format_multiset("A (input)", a))
+    print(format_multiset("B (input)", b))
 
 def main():
     run_part1()
