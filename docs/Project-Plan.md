@@ -8,12 +8,12 @@ Phase 0: Setup
 0.2	Create GitHub issues for each task below			
 0.3	Define and document universe ordering			
 Phase 1: Part 1 (Sets)				
-1.1	Bit string/Boolean array representation of A and B (n ≥ 10)			
-1.2	Implement NOT(A)			                        
-1.3	Implement union, intersection			
-1.4	Implement difference (A − B)			
-1.5	Implement symmetric difference as (A − B) ∪ (B − A)			
-1.6	Display bit string and element-name listing for every result			
+1.1	Bit string/Boolean array representation of A and B (n ≥ 10)		   Erich                    [Complete]	                            [339051f]
+1.2	Implement NOT(A)			                                           Erich                    [Complete]	                            [425eef2]
+1.3	Implement union, intersection			                               Erich                    [Complete]	                            [425eef2]
+1.4	Implement difference (A − B)			                               Erich                    [Complete]	                            [425eef2]
+1.5	Implement symmetric difference as (A − B) ∪ (B − A)			         Erich                    [Complete]	                            [425eef2]
+1.6	Display bit string and element-name listing for every result		 Erich                    [Complete]		                          [435a245]
 Phase 2: Part 2 (Multisets)				
 2.1	Multiplicity representation (list or dict of counts)			        Addie                      [COMPLETE]
 2.2	Choose A and B with ≥ 2 elements of multiplicity > 1 each			    Addie                      [COMPLETE]                          [d6a5c55]  

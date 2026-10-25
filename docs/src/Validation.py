@@ -29,7 +29,7 @@ def require_same_size(first, second):
         raise ValueError(
             f"size mismatch: {len(first.bits)} bits vs {len(second.bits)} bits")
         
-#creates a functions which acceptsd a list of multiplicities
+#creates a functions which accepts a list of multiplicities
 def require_counts(counts):
     #check whether the number of items in the list is different from the size of the universal set
     if len(counts) != size():
@@ -38,4 +38,12 @@ def require_counts(counts):
     # Check each multiplicity to ensure it is a non-negative integer
     for count in counts:
         if type(count) is not int or count < 0:
-            raise ValueError("Counts must be non-negative integers")
+            raise ValueError("Counts must be non-negative integers.
+
+#Creates a function which validates whether appropriate values are passed for week 2
+#change condition.
+def require_memberships(memberships):
+    #Checks whether the number of membership degrees matches the number of elements in 
+    #Universe (10 elements).
+    if len(memberships) != size():
+        raise ValueError("Invalid number of membership degrees.")
