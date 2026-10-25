@@ -44,6 +44,7 @@ def run_part2():
     print("PART 2: MULTISETS (counts) #####")
     print(format_multiset("A (input)", a))
     print(format_multiset("B (input)", b))
+    print(format_multiset("A UNION B", a.union(b)))
 
 def main():
     run_part1()
