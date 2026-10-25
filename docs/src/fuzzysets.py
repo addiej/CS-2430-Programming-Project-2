@@ -17,4 +17,14 @@ class FuzzySet:
         result.append(1.0 - x)
       #Returns a new FuzzySet containing the complemented membership degrees.
       return FuzzySet(result)
-    
+
+  #Compares the membership degrees of 2 fuzzy-sets and keeps the larger value for each
+  #element.
+  def union(self, other):
+      if not isinstance(other, FuzzySet):
+          raise TypeError("FuzzySet operations require 2 FuzzySet objects")
+      result = []
+      #Pairs the corresponding values from both lists
+      for a, b in zip(self._memberships, other._memberships):
+          result.append(max(a, b))
+      return FuzzySet(result)
