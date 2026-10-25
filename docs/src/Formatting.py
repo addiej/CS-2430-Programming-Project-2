@@ -35,3 +35,7 @@ def format_set(title, result):
     return (f"{SET_LABEL} {title}\n"
             f"    bit string : {result.to_bit_string()}\n"
             f"    elements   : {listing}")
+
+#Formats and labels the results of multiset operations.
+def format_multiset(title, result):
+    
