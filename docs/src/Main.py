@@ -6,9 +6,10 @@
 # File: main.py - runs every demo with clearly labeled output.
 # Run with:  python main.py
 
-from Data import SET_CASES, SET_EDGE_CASES
+from Data import SET_CASES, SET_EDGE_CASES, MULTISET_A, MULTISET_B
 from Sets_bitstring import BitSet
-from Formatting import format_universe, format_set
+from MultiSets imports MultiSet
+from Formatting import format_universe, format_set, format_multiset
 
 
 def run_set_case(case):
