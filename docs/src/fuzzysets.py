@@ -1,6 +1,10 @@
 from Validation import require_memberships
 from Universe import UNIVERSE, index_of
 
+# Floating-point results are inexact (1.0 - 0.7 is 0.30000000000000004),
+# so results are compared within this small tolerance, never with ==.
+TOLERANCE = 1e-9
+
 #Declares class FuzzySets.
 class FuzzySet:
   #Constructor that initialises the FuzzySet class with parameters self and memberships. 
