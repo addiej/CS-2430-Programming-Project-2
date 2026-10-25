@@ -13,6 +13,8 @@ from Universe import UNIVERSE
 
 SET_LABEL = "[SET]"  # ordinary sets (Part 1)
 
+#multisets (Part 2)
+MULTISET_LABEL = "[MULTISET]" 
 
 
 def format_names(names):
