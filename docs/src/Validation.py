@@ -53,6 +53,8 @@ def require_memberships(memberships):
     for x in memberships:
         if not (isinstance(x, int) or isinstance(x, float)):
             raise ValueError("Membership degrees must be numbers.")
+        if isinstance(x, bool): #Boolean values should be rejected!
+            raise ValueError("Membership degrees cannot be Boolean values.")
         if not (0.0 <= x <= 1.0):
             raise ValueError("Outside of valid range (0.0 to 1.0)")
 
