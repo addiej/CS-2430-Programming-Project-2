@@ -45,10 +45,13 @@ def run_part2():
     print(format_multiset("A (input)", a))
     print(format_multiset("B (input)", b))
     print(format_multiset("A UNION B", a.union(b)))
+    print(format_multiset("A INTERSECT B", a.intersection(b)))
+    print(format_multiset("A MINUS B", a.difference(b)))
+    print(format_multiset("A SUM B", a.sum(b)))
 
 def main():
     run_part1()
-
+    run_part2()
 
 if __name__ == "__main__":
     main()
