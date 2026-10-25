@@ -37,6 +37,11 @@ def run_part1():
     for case in SET_CASES + SET_EDGE_CASES:
         run_set_case(case)
 
+#Runs the Part 2 multiset operations and displays their results.
+def run_part2():
+    a = MultiSet(MULTISET_A)
+    b = MultiSet(MULTISET_B)
+
 
 def main():
     run_part1()
