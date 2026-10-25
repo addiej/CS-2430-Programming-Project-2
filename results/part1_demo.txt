@@ -1,0 +1,141 @@
+PART 1: ORDINARY SETS (bit strings) #####
+Universe order (index 0 = leftmost bit): 0:a, 1:b, 2:c, 3:d, 4:e, 5:f, 6:g, 7:h, 8:i, 9:j
+
+=== Part 1 case: overlapping ===
+[SET] A (input)
+    bit string : 1111100000
+    elements   : {a, b, c, d, e}
+[SET] B (input)
+    bit string : 0001111000
+    elements   : {d, e, f, g}
+[SET] NOT(A)
+    bit string : 0000011111
+    elements   : {f, g, h, i, j}
+[SET] A UNION B
+    bit string : 1111111000
+    elements   : {a, b, c, d, e, f, g}
+[SET] A INTERSECT B
+    bit string : 0001100000
+    elements   : {d, e}
+[SET] A MINUS B
+    bit string : 1110000000
+    elements   : {a, b, c}
+[SET] A SYMMETRIC DIFFERENCE B = (A-B) U (B-A)
+    bit string : 1110011000
+    elements   : {a, b, c, f, g}
+
+=== Part 1 case: disjoint ===
+[SET] A (input)
+    bit string : 1110000000
+    elements   : {a, b, c}
+[SET] B (input)
+    bit string : 0000011100
+    elements   : {f, g, h}
+[SET] NOT(A)
+    bit string : 0001111111
+    elements   : {d, e, f, g, h, i, j}
+[SET] A UNION B
+    bit string : 1110011100
+    elements   : {a, b, c, f, g, h}
+[SET] A INTERSECT B
+    bit string : 0000000000
+    elements   : {}  (empty set)
+[SET] A MINUS B
+    bit string : 1110000000
+    elements   : {a, b, c}
+[SET] A SYMMETRIC DIFFERENCE B = (A-B) U (B-A)
+    bit string : 1110011100
+    elements   : {a, b, c, f, g, h}
+
+=== Part 1 case: A is a subset of B ===
+[SET] A (input)
+    bit string : 0110000000
+    elements   : {b, c}
+[SET] B (input)
+    bit string : 1111000000
+    elements   : {a, b, c, d}
+[SET] NOT(A)
+    bit string : 1001111111
+    elements   : {a, d, e, f, g, h, i, j}
+[SET] A UNION B
+    bit string : 1111000000
+    elements   : {a, b, c, d}
+[SET] A INTERSECT B
+    bit string : 0110000000
+    elements   : {b, c}
+[SET] A MINUS B
+    bit string : 0000000000
+    elements   : {}  (empty set)
+[SET] A SYMMETRIC DIFFERENCE B = (A-B) U (B-A)
+    bit string : 1001000000
+    elements   : {a, d}
+
+=== Part 1 case: edge: A is the empty set ===
+[SET] A (input)
+    bit string : 0000000000
+    elements   : {}  (empty set)
+[SET] B (input)
+    bit string : 1010100000
+    elements   : {a, c, e}
+[SET] NOT(A)
+    bit string : 1111111111
+    elements   : {a, b, c, d, e, f, g, h, i, j}
+[SET] A UNION B
+    bit string : 1010100000
+    elements   : {a, c, e}
+[SET] A INTERSECT B
+    bit string : 0000000000
+    elements   : {}  (empty set)
+[SET] A MINUS B
+    bit string : 0000000000
+    elements   : {}  (empty set)
+[SET] A SYMMETRIC DIFFERENCE B = (A-B) U (B-A)
+    bit string : 1010100000
+    elements   : {a, c, e}
+
+=== Part 1 case: edge: A is the full universe ===
+[SET] A (input)
+    bit string : 1111111111
+    elements   : {a, b, c, d, e, f, g, h, i, j}
+[SET] B (input)
+    bit string : 1010100000
+    elements   : {a, c, e}
+[SET] NOT(A)
+    bit string : 0000000000
+    elements   : {}  (empty set)
+[SET] A UNION B
+    bit string : 1111111111
+    elements   : {a, b, c, d, e, f, g, h, i, j}
+[SET] A INTERSECT B
+    bit string : 1010100000
+    elements   : {a, c, e}
+[SET] A MINUS B
+    bit string : 0101011111
+    elements   : {b, d, f, g, h, i, j}
+[SET] A SYMMETRIC DIFFERENCE B = (A-B) U (B-A)
+    bit string : 0101011111
+    elements   : {b, d, f, g, h, i, j}
+
+=== Part 1 case: edge: A equals B ===
+[SET] A (input)
+    bit string : 0101010000
+    elements   : {b, d, f}
+[SET] B (input)
+    bit string : 0101010000
+    elements   : {b, d, f}
+[SET] NOT(A)
+    bit string : 1010101111
+    elements   : {a, c, e, g, h, i, j}
+[SET] A UNION B
+    bit string : 0101010000
+    elements   : {b, d, f}
+[SET] A INTERSECT B
+    bit string : 0101010000
+    elements   : {b, d, f}
+[SET] A MINUS B
+    bit string : 0000000000
+    elements   : {}  (empty set)
+[SET] A SYMMETRIC DIFFERENCE B = (A-B) U (B-A)
+    bit string : 0000000000
+    elements   : {}  (empty set)
+
