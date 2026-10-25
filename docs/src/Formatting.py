@@ -38,4 +38,8 @@ def format_set(title, result):
 
 #Formats and labels the results of multiset operations.
 def format_multiset(title, result):
-    
+    #Retrieves the element counts from the MultiSet object.
+    counts = result._counts
+    #Returns the operation name and its corresponding counts.
+    return (f"{MULTISET_LABEL} {title}\n"
+            f"    counts: {counts}")
