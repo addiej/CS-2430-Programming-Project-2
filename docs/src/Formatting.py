@@ -14,7 +14,10 @@ from Universe import UNIVERSE
 SET_LABEL = "[SET]"  # ordinary sets (Part 1)
 
 #multisets (Part 2)
-MULTISET_LABEL = "[MULTISET]" 
+MULTISET_LABEL = "[MULTISET]"
+
+# added for the fuzzy-set Change Request
+FUZZY_LABEL = "[FUZZY]"    # fuzzy sets; never mixed with [SET] or [MULTISET]
 
 
 def format_names(names):
@@ -43,3 +46,12 @@ def format_multiset(title, result):
     #Returns the operation name and its corresponding counts.
     return (f"{MULTISET_LABEL} {title}\n"
             f"    counts: {counts}")
+
+def format_fuzzy(title, fuzzy):
+    # Shows every non-zero degree with 2 decimals, labeled [FUZZY].
+    entries = [f"{name}: {degree:.2f}"
+               for name, degree in fuzzy.to_pairs() if degree > 0.0]
+    listing = "{" + ", ".join(entries) + "}" if entries else "{}  (all degrees 0.00)"
+    return (f"{FUZZY_LABEL} {title}\n"
+            f"    degrees : {listing}\n"
+            f"    (elements not listed have degree 0.00)")

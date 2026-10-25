@@ -2,8 +2,7 @@
 # Team members: Erich Mundt, Addie Hurst
 # Course and section: CS 2430, section 502
 # Project name: Programming Project 2
-# Primary author: [NAME]
-# File: universe.py - the ONE place that defines the universal set and its order.
+# File: Universe.py - the ONE place that defines the universal set and its order.
 #
 # ORDERING RULE (document this in the report): UNIVERSE[0] is the LEFTMOST bit
 # of every bit string. Every other module gets element names and positions
