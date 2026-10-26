@@ -1,3 +1,25 @@
+# Team name: Group 3
+# Team members: Erich Mundt, Addie Hurst
+# Course and section: CS 2430, section 502
+# Project name: Programming Project 2
+# File: Fuzzy_sets.py - Change Request: fuzzy sets.
+
+# A fuzzyset stores one membership degree (a float in [0.0, 1.0]) per element of
+# the universe, in the order fixed by Universe.py. 0.0 = not a member, 1.0 = full
+# member, anything between = partial member. A degree is NOT a probability.
+#
+# Like BitSet, this class only COMPUTES: it never prints, and every operation
+# returns a NEW object (inputs are never changed).
+#
+# MISSING ENTRIES: an element of the universe with no stored entry has degree 0.0,
+# so complement (which covers EVERY element of the universe) gives it 1.0.
+#
+# INVALID INPUT: Validation.require_memberships raises ValueError for a wrong
+# number of degrees, non-numbers, booleans, NaN, and degrees below 0.0 or above
+# 1.0. An element name that is not in the universe also raises ValueError
+# (from Universe.index_of).
+
+
 from Validation import require_memberships
 from Universe import UNIVERSE, index_of
 

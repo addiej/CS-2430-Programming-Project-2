@@ -1,5 +1,5 @@
 # Team name: Group 3
-# Team members: Erich Mundt
+# Team members: Erich Mundt, Addie Hurst
 # Course and section: CS 2430, section 502
 # Project name: Programming Project 2
 # File: data.py - hard-coded inputs shared by main.py and tests/.
