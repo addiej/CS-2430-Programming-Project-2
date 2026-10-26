@@ -2,7 +2,6 @@
 # Team members: Erich Mundt, Addie Hurst
 # Course and section: CS 2430, section 502
 # Project name: Programming Project 2
-# Primary author:
 # File: sets_bitstring.py - Part 1: ordinary sets stored as Boolean arrays.
 #
 # A BitSet holds one True/False per universe element, in the order fixed by

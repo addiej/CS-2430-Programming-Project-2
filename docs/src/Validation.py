@@ -2,7 +2,6 @@
 # Team members: Erich Mundt, Addie Hurst
 # Course and section: CS 2430, section 502
 # Project name: Programming Project 2
-# Primary author:
 # File: validation.py - shared input checks (shared core; used by Part 1 and,
 # later, by Part 2 and any Change Request code).
 #

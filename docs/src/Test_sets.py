@@ -2,7 +2,6 @@
 # Team members: Erich Mundt, Addie Hurst
 # Course and section: CS 2430, section 502
 # Project name: Programming Project 2
-# Primary author:
 # File: tests/test_sets.py - verification for Part 1 (ordinary sets).
 # Run from the project root:  python -m unittest -v
 #

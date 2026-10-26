@@ -2,7 +2,6 @@
 # Team members: Erich Mundt
 # Course and section: CS 2430, section 502
 # Project name: Programming Project 2
-# Primary author:
 # File: data.py - hard-coded inputs shared by main.py and tests/.
 # Data only, no logic. Part 2 (multiset) data gets added below later.
 

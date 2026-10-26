@@ -2,7 +2,6 @@
 # Team members: Erich Mundt, Addie Hurst
 # Course and section: CS 2430, section 502
 # Project name: Programming Project 2
-# Primary author: Erich (Addie provided some additions)
 # File: formatting.py - shared output formatting and labels (shared core).
 #
 # Works with ANY object that has to_bit_string() and to_names(), so it does not
