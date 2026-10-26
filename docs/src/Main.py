@@ -5,7 +5,7 @@
 # File: main.py - runs every demo with clearly labeled output.
 # Run with:  python main.py
 
-from Data import SET_CASES, SET_EDGE_CASES, MULTISET_A, MULTISET_B, FUZZY_CASES, FUZZY_EDGE_CASES
+from Data import SET_CASES, SET_EDGE_CASES, MULTISET_CASES, MULTISET_EDGE_CASES, FUZZY_CASES, FUZZY_EDGE_CASES
 from Sets_bitstring import BitSet
 from multisets import MultiSet
 from Formatting import format_universe, format_set, format_multiset, format_fuzzy
@@ -38,16 +38,24 @@ def run_part1():
         run_set_case(case)
 
 #Runs the Part 2 multiset operations and displays their results.
-def run_part2():
-    a = MultiSet(MULTISET_A)
-    b = MultiSet(MULTISET_B)
-    print("PART 2: MULTISETS (counts) #####")
+def run_multiset_case(case):
+    # Builds this case's A and B from {element name: count}, then shows all four operations.
+    a = MultiSet.from_counts(case["A"])
+    b = MultiSet.from_counts(case["B"])
+
+    print(f"=== Part 2 case: {case['name']} ===")
     print(format_multiset("A (input)", a))
     print(format_multiset("B (input)", b))
-    print(format_multiset("A UNION B", a.union(b)))
-    print(format_multiset("A INTERSECT B", a.intersection(b)))
-    print(format_multiset("A MINUS B", a.difference(b)))
-    print(format_multiset("A SUM B", a.sum(b)))
+    print(format_multiset("A UNION B = max counts", a.union(b)))
+    print(format_multiset("A INTERSECT B = min counts", a.intersection(b)))
+    print(format_multiset("A MINUS B = A - B, not below 0", a.difference(b)))
+    print(format_multiset("A SUM B = counts added", a.sum(b)))
+    print()
+
+def run_part2():
+    print("##### PART 2: MULTISETS (counts) #####")
+    for case in MULTISET_CASES + MULTISET_EDGE_CASES:
+         run_multiset_case(case)
 
 def run_fuzzy_case(case):
     # Shows one fuzzy case: the inputs, then complement, union, and intersection.
