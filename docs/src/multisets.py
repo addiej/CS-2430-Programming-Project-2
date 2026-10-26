@@ -3,7 +3,7 @@
 #Team 3: Addie Hurst, Erich Mundt
 #Primary author for this file: Addie Hurst
 
-from Universe import UNIVERSE
+from Universe import UNIVERSE, index_of
 from Validation import require_counts
 
 

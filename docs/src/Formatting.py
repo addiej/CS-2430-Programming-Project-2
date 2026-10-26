@@ -40,11 +40,11 @@ def format_set(title, result):
 
 #Formats and labels the results of multiset operations.
 def format_multiset(title, result):
-    #Retrieves the element counts from the MultiSet object.
-    counts = result._counts
-    #Returns the operation name and its corresponding counts.
+    entries = [f"{name}:{count}" for name, count in result.to_pairs() if count > 0]
+    listing = "{" + ", ".join(entries) + "}" if entries else "{}  (empty multiset)"
     return (f"{MULTISET_LABEL} {title}\n"
-            f"    counts: {counts}")
+            f"    counts   : {result.counts}\n"
+            f"    elements : {listing}")
 
 def format_fuzzy(title, fuzzy):
     # Shows every non-zero degree with 2 decimals, labeled [FUZZY].

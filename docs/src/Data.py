@@ -26,9 +26,25 @@ SET_EDGE_CASES = [
      "A": ["b", "d", "f"], "B": ["b", "d", "f"]},
 ]
 
-# Part 2: Multiset data
-MULTISET_A = [3, 2, 1, 0, 2, 0, 0, 0, 0, 0]
-MULTISET_B = [1, 4, 2, 0, 1, 0, 0, 0, 0, 0]
+# ---- Part 2: multisets ({element name: count}; unlisted = 0) ----
+# Every case gives BOTH A and B at least two elements with count > 1.
+MULTISET_CASES = [
+    {"name": "overlapping counts",
+     "A": {"a": 3, "b": 2, "c": 1, "e": 4},
+     "B": {"a": 1, "b": 5, "d": 2, "e": 2}},
+    {"name": "elements only in one multiset",
+     "A": {"a": 2, "b": 3},
+     "B": {"c": 2, "d": 4}},
+    {"name": "identical multisets",
+     "A": {"a": 2, "c": 3, "f": 1},
+     "B": {"a": 2, "c": 3, "f": 1}},
+]
+
+MULTISET_EDGE_CASES = [
+    {"name": "edge: B counts exceed A (difference clamps at 0)",
+     "A": {"a": 1, "b": 2, "c": 2},
+     "B": {"a": 4, "b": 2, "c": 3}},
+]
 
 # ---- Change Request: fuzzy sets ({element name: degree}; unlisted = 0.0) ----
 FUZZY_CASES = [
