@@ -26,7 +26,7 @@ were made for the change of order.
 | Erich Mundt | Fuzzy tests, report, regression run | results/... |
 
 ## Report, screencast, and packaging
-- Report: [name]  | Screencast: all members | Packaging and README: [name]
+- Report: Addie Hurst  | Screencast: all members | Packaging and README: Erich Mundt
 
 ## Process notes
 
