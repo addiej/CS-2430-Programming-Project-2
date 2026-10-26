@@ -1,0 +1,293 @@
+PART 1: ORDINARY SETS (bit strings) #####
+Universe order (index 0 = leftmost bit): 0:a, 1:b, 2:c, 3:d, 4:e, 5:f, 6:g, 7:h, 8:i, 9:j
+
+=== Part 1 case: overlapping ===
+[SET] A (input)
+    bit string : 1111100000
+    elements   : {a, b, c, d, e}
+[SET] B (input)
+    bit string : 0001111000
+    elements   : {d, e, f, g}
+[SET] NOT(A)
+    bit string : 0000011111
+    elements   : {f, g, h, i, j}
+[SET] A UNION B
+    bit string : 1111111000
+    elements   : {a, b, c, d, e, f, g}
+[SET] A INTERSECT B
+    bit string : 0001100000
+    elements   : {d, e}
+[SET] A MINUS B
+    bit string : 1110000000
+    elements   : {a, b, c}
+[SET] A SYMMETRIC DIFFERENCE B = (A-B) U (B-A)
+    bit string : 1110011000
+    elements   : {a, b, c, f, g}
+
+=== Part 1 case: disjoint ===
+[SET] A (input)
+    bit string : 1110000000
+    elements   : {a, b, c}
+[SET] B (input)
+    bit string : 0000011100
+    elements   : {f, g, h}
+[SET] NOT(A)
+    bit string : 0001111111
+    elements   : {d, e, f, g, h, i, j}
+[SET] A UNION B
+    bit string : 1110011100
+    elements   : {a, b, c, f, g, h}
+[SET] A INTERSECT B
+    bit string : 0000000000
+    elements   : {}  (empty set)
+[SET] A MINUS B
+    bit string : 1110000000
+    elements   : {a, b, c}
+[SET] A SYMMETRIC DIFFERENCE B = (A-B) U (B-A)
+    bit string : 1110011100
+    elements   : {a, b, c, f, g, h}
+
+=== Part 1 case: A is a subset of B ===
+[SET] A (input)
+    bit string : 0110000000
+    elements   : {b, c}
+[SET] B (input)
+    bit string : 1111000000
+    elements   : {a, b, c, d}
+[SET] NOT(A)
+    bit string : 1001111111
+    elements   : {a, d, e, f, g, h, i, j}
+[SET] A UNION B
+    bit string : 1111000000
+    elements   : {a, b, c, d}
+[SET] A INTERSECT B
+    bit string : 0110000000
+    elements   : {b, c}
+[SET] A MINUS B
+    bit string : 0000000000
+    elements   : {}  (empty set)
+[SET] A SYMMETRIC DIFFERENCE B = (A-B) U (B-A)
+    bit string : 1001000000
+    elements   : {a, d}
+
+=== Part 1 case: edge: A is the empty set ===
+[SET] A (input)
+    bit string : 0000000000
+    elements   : {}  (empty set)
+[SET] B (input)
+    bit string : 1010100000
+    elements   : {a, c, e}
+[SET] NOT(A)
+    bit string : 1111111111
+    elements   : {a, b, c, d, e, f, g, h, i, j}
+[SET] A UNION B
+    bit string : 1010100000
+    elements   : {a, c, e}
+[SET] A INTERSECT B
+    bit string : 0000000000
+    elements   : {}  (empty set)
+[SET] A MINUS B
+    bit string : 0000000000
+    elements   : {}  (empty set)
+[SET] A SYMMETRIC DIFFERENCE B = (A-B) U (B-A)
+    bit string : 1010100000
+    elements   : {a, c, e}
+
+=== Part 1 case: edge: A is the full universe ===
+[SET] A (input)
+    bit string : 1111111111
+    elements   : {a, b, c, d, e, f, g, h, i, j}
+[SET] B (input)
+    bit string : 1010100000
+    elements   : {a, c, e}
+[SET] NOT(A)
+    bit string : 0000000000
+    elements   : {}  (empty set)
+[SET] A UNION B
+    bit string : 1111111111
+    elements   : {a, b, c, d, e, f, g, h, i, j}
+[SET] A INTERSECT B
+    bit string : 1010100000
+    elements   : {a, c, e}
+[SET] A MINUS B
+    bit string : 0101011111
+    elements   : {b, d, f, g, h, i, j}
+[SET] A SYMMETRIC DIFFERENCE B = (A-B) U (B-A)
+    bit string : 0101011111
+    elements   : {b, d, f, g, h, i, j}
+
+=== Part 1 case: edge: A equals B ===
+[SET] A (input)
+    bit string : 0101010000
+    elements   : {b, d, f}
+[SET] B (input)
+    bit string : 0101010000
+    elements   : {b, d, f}
+[SET] NOT(A)
+    bit string : 1010101111
+    elements   : {a, c, e, g, h, i, j}
+[SET] A UNION B
+    bit string : 0101010000
+    elements   : {b, d, f}
+[SET] A INTERSECT B
+    bit string : 0101010000
+    elements   : {b, d, f}
+[SET] A MINUS B
+    bit string : 0000000000
+    elements   : {}  (empty set)
+[SET] A SYMMETRIC DIFFERENCE B = (A-B) U (B-A)
+    bit string : 0000000000
+    elements   : {}  (empty set)
+
+##### PART 2: MULTISETS (counts) #####
+=== Part 2 case: overlapping counts ===
+[MULTISET] A (input)
+    counts   : (3, 2, 1, 0, 4, 0, 0, 0, 0, 0)
+    elements : {a:3, b:2, c:1, e:4}
+[MULTISET] B (input)
+    counts   : (1, 5, 0, 2, 2, 0, 0, 0, 0, 0)
+    elements : {a:1, b:5, d:2, e:2}
+[MULTISET] A UNION B = max counts
+    counts   : (3, 5, 1, 2, 4, 0, 0, 0, 0, 0)
+    elements : {a:3, b:5, c:1, d:2, e:4}
+[MULTISET] A INTERSECT B = min counts
+    counts   : (1, 2, 0, 0, 2, 0, 0, 0, 0, 0)
+    elements : {a:1, b:2, e:2}
+[MULTISET] A MINUS B = A - B, not below 0
+    counts   : (2, 0, 1, 0, 2, 0, 0, 0, 0, 0)
+    elements : {a:2, c:1, e:2}
+[MULTISET] A SUM B = counts added
+    counts   : (4, 7, 1, 2, 6, 0, 0, 0, 0, 0)
+    elements : {a:4, b:7, c:1, d:2, e:6}
+
+=== Part 2 case: elements only in one multiset ===
+[MULTISET] A (input)
+    counts   : (2, 3, 0, 0, 0, 0, 0, 0, 0, 0)
+    elements : {a:2, b:3}
+[MULTISET] B (input)
+    counts   : (0, 0, 2, 4, 0, 0, 0, 0, 0, 0)
+    elements : {c:2, d:4}
+[MULTISET] A UNION B = max counts
+    counts   : (2, 3, 2, 4, 0, 0, 0, 0, 0, 0)
+    elements : {a:2, b:3, c:2, d:4}
+[MULTISET] A INTERSECT B = min counts
+    counts   : (0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+    elements : {}  (empty multiset)
+[MULTISET] A MINUS B = A - B, not below 0
+    counts   : (2, 3, 0, 0, 0, 0, 0, 0, 0, 0)
+    elements : {a:2, b:3}
+[MULTISET] A SUM B = counts added
+    counts   : (2, 3, 2, 4, 0, 0, 0, 0, 0, 0)
+    elements : {a:2, b:3, c:2, d:4}
+
+=== Part 2 case: identical multisets ===
+[MULTISET] A (input)
+    counts   : (2, 0, 3, 0, 0, 1, 0, 0, 0, 0)
+    elements : {a:2, c:3, f:1}
+[MULTISET] B (input)
+    counts   : (2, 0, 3, 0, 0, 1, 0, 0, 0, 0)
+    elements : {a:2, c:3, f:1}
+[MULTISET] A UNION B = max counts
+    counts   : (2, 0, 3, 0, 0, 1, 0, 0, 0, 0)
+    elements : {a:2, c:3, f:1}
+[MULTISET] A INTERSECT B = min counts
+    counts   : (2, 0, 3, 0, 0, 1, 0, 0, 0, 0)
+    elements : {a:2, c:3, f:1}
+[MULTISET] A MINUS B = A - B, not below 0
+    counts   : (0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+    elements : {}  (empty multiset)
+[MULTISET] A SUM B = counts added
+    counts   : (4, 0, 6, 0, 0, 2, 0, 0, 0, 0)
+    elements : {a:4, c:6, f:2}
+
+=== Part 2 case: edge: B counts exceed A (difference clamps at 0) ===
+[MULTISET] A (input)
+    counts   : (1, 2, 2, 0, 0, 0, 0, 0, 0, 0)
+    elements : {a:1, b:2, c:2}
+[MULTISET] B (input)
+    counts   : (4, 2, 3, 0, 0, 0, 0, 0, 0, 0)
+    elements : {a:4, b:2, c:3}
+[MULTISET] A UNION B = max counts
+    counts   : (4, 2, 3, 0, 0, 0, 0, 0, 0, 0)
+    elements : {a:4, b:2, c:3}
+[MULTISET] A INTERSECT B = min counts
+    counts   : (1, 2, 2, 0, 0, 0, 0, 0, 0, 0)
+    elements : {a:1, b:2, c:2}
+[MULTISET] A MINUS B = A - B, not below 0
+    counts   : (0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+    elements : {}  (empty multiset)
+[MULTISET] A SUM B = counts added
+    counts   : (5, 4, 5, 0, 0, 0, 0, 0, 0, 0)
+    elements : {a:5, b:4, c:5}
+
+##### CHANGE REQUEST: FUZZY SETS #####
+Universe order (index 0 = leftmost bit): 0:a, 1:b, 2:c, 3:d, 4:e, 5:f, 6:g, 7:h, 8:i, 9:j
+
+=== Fuzzy case: intermediate degrees ===
+[FUZZY] A (input)
+    degrees : {a: 0.70, b: 0.20, c: 1.00}
+    (elements not listed have degree 0.00)
+[FUZZY] B (input)
+    degrees : {a: 0.40, c: 0.50, d: 0.90}
+    (elements not listed have degree 0.00)
+[FUZZY] COMPLEMENT of A = 1 - A(x)
+    degrees : {a: 0.30, b: 0.80, d: 1.00, e: 1.00, f: 1.00, g: 1.00, h: 1.00, i: 1.00, j: 1.00}
+    (elements not listed have degree 0.00)
+[FUZZY] A UNION B = max(A(x), B(x))
+    degrees : {a: 0.70, b: 0.20, c: 1.00, d: 0.90}
+    (elements not listed have degree 0.00)
+[FUZZY] A INTERSECT B = min(A(x), B(x))
+    degrees : {a: 0.40, c: 0.50}
+    (elements not listed have degree 0.00)
+
+=== Fuzzy case: boundary degrees 0.0 and 1.0 ===
+[FUZZY] A (input)
+    degrees : {a: 1.00, c: 0.50}
+    (elements not listed have degree 0.00)
+[FUZZY] B (input)
+    degrees : {b: 1.00, c: 0.50}
+    (elements not listed have degree 0.00)
+[FUZZY] COMPLEMENT of A = 1 - A(x)
+    degrees : {b: 1.00, c: 0.50, d: 1.00, e: 1.00, f: 1.00, g: 1.00, h: 1.00, i: 1.00, j: 1.00}
+    (elements not listed have degree 0.00)
+[FUZZY] A UNION B = max(A(x), B(x))
+    degrees : {a: 1.00, b: 1.00, c: 0.50}
+    (elements not listed have degree 0.00)
+[FUZZY] A INTERSECT B = min(A(x), B(x))
+    degrees : {c: 0.50}
+    (elements not listed have degree 0.00)
+
+=== Fuzzy case: edge: A has no entries (complement is all 1.0) ===
+[FUZZY] A (input)
+    degrees : {}  (all degrees 0.00)
+    (elements not listed have degree 0.00)
+[FUZZY] B (input)
+    degrees : {a: 0.25}
+    (elements not listed have degree 0.00)
+[FUZZY] COMPLEMENT of A = 1 - A(x)
+    degrees : {a: 1.00, b: 1.00, c: 1.00, d: 1.00, e: 1.00, f: 1.00, g: 1.00, h: 1.00, i: 1.00, j: 1.00}
+    (elements not listed have degree 0.00)
+[FUZZY] A UNION B = max(A(x), B(x))
+    degrees : {a: 0.25}
+    (elements not listed have degree 0.00)
+[FUZZY] A INTERSECT B = min(A(x), B(x))
+    degrees : {}  (all degrees 0.00)
+    (elements not listed have degree 0.00)
+
+=== Fuzzy case: edge: A equals B ===
+[FUZZY] A (input)
+    degrees : {a: 0.60, b: 0.10}
+    (elements not listed have degree 0.00)
+[FUZZY] B (input)
+    degrees : {a: 0.60, b: 0.10}
+    (elements not listed have degree 0.00)
+[FUZZY] COMPLEMENT of A = 1 - A(x)
+    degrees : {a: 0.40, b: 0.90, c: 1.00, d: 1.00, e: 1.00, f: 1.00, g: 1.00, h: 1.00, i: 1.00, j: 1.00}
+    (elements not listed have degree 0.00)
+[FUZZY] A UNION B = max(A(x), B(x))
+    degrees : {a: 0.60, b: 0.10}
+    (elements not listed have degree 0.00)
+[FUZZY] A INTERSECT B = min(A(x), B(x))
+    degrees : {a: 0.60, b: 0.10}
+    (elements not listed have degree 0.00)
+

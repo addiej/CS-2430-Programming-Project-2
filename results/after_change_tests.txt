@@ -1,0 +1,18 @@
+test_matches_counter_operations (test_multisets.TestAgainstCounter.test_matches_counter_operations) ... ok
+test_both_multisets_have_two_counts_above_one (test_multisets.TestAssignmentRequirements.test_both_multisets_have_two_counts_above_one) ... ok
+test_difference_clamps_at_zero (test_multisets.TestAssignmentRequirements.test_difference_clamps_at_zero) ... ok
+test_difference_never_negative (test_multisets.TestAssignmentRequirements.test_difference_never_negative) ... ok
+test_difference_with_itself_is_all_zero (test_multisets.TestEdgeCasesAndProperties.test_difference_with_itself_is_all_zero) ... ok
+test_operations_do_not_modify_their_inputs (test_multisets.TestEdgeCasesAndProperties.test_operations_do_not_modify_their_inputs) ... ok
+test_zero_count_in_both_stays_zero (test_multisets.TestEdgeCasesAndProperties.test_zero_count_in_both_stays_zero) ... ok
+test_every_operation_matches_hand_work (test_multisets.TestHandWorkedResults.test_every_operation_matches_hand_work) ... ok
+test_negative_count_rejected (test_multisets.TestInvalidInput.test_negative_count_rejected) ... ok
+test_non_integer_counts_rejected (test_multisets.TestInvalidInput.test_non_integer_counts_rejected) ... ok
+test_operating_on_non_multiset_rejected (test_multisets.TestInvalidInput.test_operating_on_non_multiset_rejected) ... ok
+test_unknown_element_rejected (test_multisets.TestInvalidInput.test_unknown_element_rejected) ... ok
+test_wrong_length_rejected (test_multisets.TestInvalidInput.test_wrong_length_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.002s
+
+OK
